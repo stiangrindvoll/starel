@@ -1,0 +1,15 @@
+version: '3'
+services:
+  database:
+    image: "postgres"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=star
+      - POSTGRES_PASSWORD=star
+      - POSTGRES_DB=starel_dev
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+
+volumes:
+  database-data:
