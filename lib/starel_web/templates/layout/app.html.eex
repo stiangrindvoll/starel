@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>StarEl · Phoenix Framework</title>
+    <title>Star Citizen Elevator</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
@@ -12,16 +12,21 @@
     <header>
       <section class="container">
         <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
+              <span> Trading </span> | 
+              <span> Mining  </span>
+              <span class="clearfix">
+                <span class="float-right"> 
+                  <table>
+                      <tr>
+                        <td> Star Citizen:</td> <td><b><%= @user.handle %></b> </td>
+                      </tr>
+                      <tr>
+                        <td> UEC:</td> <td><b><%= @user.uec %></b> </td>
+                      </tr>
+                  </table>
+                </span>
+              </span>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
       </section>
     </header>
     <main role="main" class="container">
